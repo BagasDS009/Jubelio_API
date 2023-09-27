@@ -1,0 +1,1472 @@
+{
+	"info": {
+		"_postman_id": "7e596b3e-dc2c-4058-86d2-76c2ccba5346",
+		"name": "Jubelio-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21661366"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Valid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 200 \", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log (jsonData.passwordExpired)\r",
+									"pm.test(\"passwordExpired \", function () {\r",
+									"    pm.expect(jsonData.passwordExpired).to.eql(false);\r",
+									"});\r",
+									"console.log (jsonData.userName)\r",
+									"pm.test(\"userName \", function () {\r",
+									"    pm.expect(jsonData.userName).to.eql(\"qa.rakamin.jubelio@gmail.com\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"qa.rakamin.jubelio@gmail.com\",\r\n    \"password\": \"Jubelio123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Url invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 404 \", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"console.log (jsonData.error)\r",
+									"pm.test(\"error \", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"Bad Request\");\r",
+									"});\r",
+									"console.log (jsonData.message)\r",
+									"pm.test(\"message \", function () {\r",
+									"    pm.expect(jsonData.message).to.eql(\"Url Not Found\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"qa.rakamin.jubelio@gmail.com\",\r\n    \"password\": \"Jubelio123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/log",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"log"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "empty pass",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 400 \", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"console.log (jsonData.error)\r",
+									"pm.test(\"error \", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"Bad Request\");\r",
+									"});\r",
+									"// console.log (jsonData.userName)\r",
+									"// pm.test(\"userName \", function () {\r",
+									"//     pm.expect(jsonData.userName).to.eql(\"qa.rakamin.jubelio@gmail.com\");\r",
+									"// });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"qa.rakamin.jubelio@gmail.com\",\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "empty email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 400 \", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"console.log (jsonData.error)\r",
+									"pm.test(\"error \", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"Bad Request\");\r",
+									"});\r",
+									"// console.log (jsonData.keys)\r",
+									"// pm.test(\"keys \", function () {\r",
+									"//     pm.expect(jsonData.keys).to.eql(\"email\");\r",
+									"// });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"\",\r\n    \"password\": \"Jubelio123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 401 \", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"console.log (jsonData.code)\r",
+									"pm.test(\"code \", function () {\r",
+									"    pm.expect(jsonData.code).to.eql(\"Invalid email or password\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"qa.rakamin.jubelio@yaho.com\",\r\n    \"password\": \"Jubelio123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid pass",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 401 \", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"console.log (jsonData.code)\r",
+									"pm.test(\"code \", function () {\r",
+									"    pm.expect(jsonData.code).to.eql(\"Invalid email or password\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"qa.rakamin.jubelio@yaho.com\",\r\n    \"password\": \"Jubelio123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid all",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 400 \", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"console.log (jsonData.code)\r",
+									"pm.test(\"code \", function () {\r",
+									"    pm.expect(jsonData.code).to.eql(\"Invalid email or password\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"qa.rakamin.jubelio@yaho.com\",\r\n    \"password\": \"Jubeli3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empty all",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 401 \", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"console.log (jsonData.code)\r",
+									"pm.test(\"code \", function () {\r",
+									"    pm.expect(jsonData.code).to.eql(\"Invalid email or password\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"\",\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid pass with below 6",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 401 \", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"console.log (jsonData.code)\r",
+									"pm.test(\"code \", function () {\r",
+									"    pm.expect(jsonData.code).to.eql(\"Invalid email or password\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"qa.rakamin.jubelio@yaho.com\",\r\n    \"password\": \"Ju\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid pass with more than 6 characters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 401 \", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"console.log (jsonData.code)\r",
+									"pm.test(\"code \", function () {\r",
+									"    pm.expect(jsonData.code).to.eql(\"Invalid email or password\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"qa.rakamin.jubelio@yaho.com\",\r\n    \"password\": \"1234567890123456789012345678901\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getInventoryPricelist",
+			"item": [
+				{
+					"name": "Unauthorized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 401 \", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"console.log (jsonData.error)\r",
+									"pm.test(\"error \", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"Unauthorized\");\r",
+									"});\r",
+									"console.log (jsonData.message)\r",
+									"pm.test(\"message \", function () {\r",
+									"    pm.expect(jsonData.message).to.eql(\"Missing authentication\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/internal-price-list/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"internal-price-list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid url",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 404 \", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"console.log (jsonData.error)\r",
+									"pm.test(\"error \", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"Bad Request\");\r",
+									"});\r",
+									"console.log (jsonData.message)\r",
+									"pm.test(\"message \", function () {\r",
+									"    pm.expect(jsonData.message).to.eql(\"Url Not Found\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/internal-price-list/12",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"internal-price-list",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Valid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 200 \", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log (jsonData.data[0].item_id)\r",
+									"pm.test(\"item_id \", function () {\r",
+									"    pm.expect(jsonData.data[0].item_id).to.eql(2);\r",
+									"});\r",
+									"console.log (jsonData.data[0].item_group_id)\r",
+									"pm.test(\"item_group_id \", function () {\r",
+									"    pm.expect(jsonData.data[0].item_group_id).to.eql(6);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/internal-price-list/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"internal-price-list",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "deleteInventoryItems",
+			"item": [
+				{
+					"name": "Valid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 200 \", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log (jsonData.status)\r",
+									"pm.test(\"status \", function () {\r",
+									"    pm.expect(jsonData.status).to.eql(\"ok\");\r",
+									"});\r",
+									"// console.log (jsonData.data[0].item_group_id)\r",
+									"// pm.test(\"item_group_id \", function () {\r",
+									"//     pm.expect(jsonData.data[0].item_group_id).to.eql(6);\r",
+									"// });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    1\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/items/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unauthorized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 401 \", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"console.log (jsonData.error)\r",
+									"pm.test(\"error \", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"Unauthorized\");\r",
+									"});\r",
+									"console.log (jsonData.message)\r",
+									"pm.test(\"message \", function () {\r",
+									"    pm.expect(jsonData.message).to.eql(\"Missing authentication\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    1\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/items/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Url",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 404 \", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"console.log (jsonData.error)\r",
+									"pm.test(\"error \", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"Not Found\");\r",
+									"});\r",
+									"console.log (jsonData.message)\r",
+									"pm.test(\"message \", function () {\r",
+									"    pm.expect(jsonData.message).to.eql(\"Not Found\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    1\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/items/12",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"items",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "negatif IDS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 400 \", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"console.log (jsonData.error)\r",
+									"pm.test(\"error \", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"Bad Request\");\r",
+									"});\r",
+									"console.log (jsonData.message)\r",
+									"pm.test(\"message \", function () {\r",
+									"    pm.expect(jsonData.message).to.eql(\"Ids Not Found\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    -1\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/items/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "String IDS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 400 \", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"console.log (jsonData.error)\r",
+									"pm.test(\"error \", function () {\r",
+									"    pm.expect(jsonData.error).to.eql(\"Bad Request\");\r",
+									"});\r",
+									"console.log (jsonData.message)\r",
+									"pm.test(\"message \", function () {\r",
+									"    pm.expect(jsonData.message).to.eql(\"child \\\"ids\\\" fails because [\\\"ids\\\" at position 0 fails because [\\\"0\\\" must be a number]]\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    \"ba\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/items/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empty ids",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 400 \", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"console.log (jsonData.status)\r",
+									"pm.test(\"status \", function () {\r",
+									"    pm.expect(jsonData.status).to.eql(\"Bad Request\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    \r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/items/",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"items",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "postInventoryImagesNew",
+			"item": [
+				{
+					"name": "Valid (jpg)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 200 \", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log (jsonData.success)\r",
+									"pm.test(\"success \", function () {\r",
+									"    pm.expect(jsonData.success).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Download/Chrome/luffy.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Powerbank",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/upload-image",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"upload-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Valid (png)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 200 \", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log (jsonData.success)\r",
+									"pm.test(\"success \", function () {\r",
+									"    pm.expect(jsonData.success).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Download/Chrome/luffy.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Powerbank",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/upload-image",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"upload-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Valid (jpeg)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 200 \", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log (jsonData.success)\r",
+									"pm.test(\"success \", function () {\r",
+									"    pm.expect(jsonData.success).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Download/Chrome/luffy.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Powerbank",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/upload-image",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"upload-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Valid (jpg) 2MB",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 200 \", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log (jsonData.success)\r",
+									"pm.test(\"success \", function () {\r",
+									"    pm.expect(jsonData.success).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Download/Chrome/luffy.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Powerbank",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/upload-image",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"upload-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unauthorized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 200 \", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log (jsonData.success)\r",
+									"pm.test(\"success \", function () {\r",
+									"    pm.expect(jsonData.success).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Download/Chrome/luffy.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Powerbank",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/upload-image",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"upload-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Url",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json(); \r",
+									"\r",
+									"pm.test(\"Status code is 200 \", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"console.log (jsonData.success)\r",
+									"pm.test(\"success \", function () {\r",
+									"    pm.expect(jsonData.success).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Authorized}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Download/Chrome/luffy.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Powerbank",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.jubelio.com/inventory/upload-image",
+							"protocol": "https",
+							"host": [
+								"api",
+								"jubelio",
+								"com"
+							],
+							"path": [
+								"inventory",
+								"upload-image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
