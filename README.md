@@ -5,7 +5,7 @@
 ### Test Case
 ###### Open browser and get this link "https://bagas12.atlassian.net/projects/JUB?selectedItem=com.atlassian.plugins.atlassian-connect-plugin:com.xpandit.plugins.xray__testing-board" to open test case with jira
 
-##By doing manual testing in Postman, with several Positive and Negative test cases such as. 
+## By doing manual testing in Postman, with several Positive and Negative test cases such as. 
 1. Login 		: 10 Test case 
 2. InventoryPrice	: 3 Test case
 3. DeleteInventory : 6 Test case
