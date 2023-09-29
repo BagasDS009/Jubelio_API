@@ -1,0 +1,1013 @@
+{
+	"id": "4b483171-fd84-4ca8-af73-29d883beeecc",
+	"name": "Jubelio-API",
+	"timestamp": "2023-09-29T08:19:23.858Z",
+	"collection_id": "21661366-7e596b3e-dc2c-4058-86d2-76c2ccba5346",
+	"folder_id": 0,
+	"environment_id": "21661366-d20b915a-40bf-4129-8f06-c9171e4a7704",
+	"totalPass": 38,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-09-29T08:19:12.331Z",
+	"totalFail": 23,
+	"results": [
+		{
+			"id": "380b28f3-11c1-4464-bd9b-cd04d02bc34b",
+			"name": "Valid",
+			"url": "https://api.jubelio.com/login",
+			"time": 2091,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 ": true,
+				"passwordExpired ": true,
+				"userName ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"passwordExpired ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"userName ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2091
+			],
+			"allTests": [
+				{
+					"Status code is 200 ": true,
+					"passwordExpired ": true,
+					"userName ": true
+				}
+			]
+		},
+		{
+			"id": "0e7efaed-a517-4c27-892b-a72ed8740148",
+			"name": "Url invalid",
+			"url": "https://api.jubelio.com/log",
+			"time": 137,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404 ": true,
+				"error ": false,
+				"message ": false
+			},
+			"testPassFailCounts": {
+				"Status code is 404 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"message ": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				137
+			],
+			"allTests": [
+				{
+					"Status code is 404 ": true,
+					"error ": false,
+					"message ": false
+				}
+			]
+		},
+		{
+			"id": "a746c9d0-cb2b-4f68-bb47-a96ff0996239",
+			"name": "empty pass",
+			"url": "https://api.jubelio.com/login",
+			"time": 189,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400 ": true,
+				"error ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				189
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": true,
+					"error ": true
+				}
+			]
+		},
+		{
+			"id": "76d1f837-1993-4f40-974a-e43855b87fa8",
+			"name": "empty email",
+			"url": "https://api.jubelio.com/login",
+			"time": 450,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400 ": true,
+				"error ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				450
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": true,
+					"error ": true
+				}
+			]
+		},
+		{
+			"id": "580b9fcd-73d6-43d4-a871-2eb41196351c",
+			"name": "Invalid email",
+			"url": "https://api.jubelio.com/login",
+			"time": 183,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 400 ": false,
+				"code ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"code ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				183
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": false,
+					"code ": true
+				}
+			]
+		},
+		{
+			"id": "fd819a11-d37b-4020-a606-277a2dc78dbc",
+			"name": "Invalid pass",
+			"url": "https://api.jubelio.com/login",
+			"time": 141,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 400 ": false,
+				"code ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"code ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				141
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": false,
+					"code ": true
+				}
+			]
+		},
+		{
+			"id": "1699b047-1743-4470-a3d5-f7407dd02c6a",
+			"name": "Invalid all",
+			"url": "https://api.jubelio.com/login",
+			"time": 344,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 400 ": false,
+				"code ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"code ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				344
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": false,
+					"code ": true
+				}
+			]
+		},
+		{
+			"id": "093403d3-fd30-406b-bd84-1654ccabcb4e",
+			"name": "Empty all",
+			"url": "https://api.jubelio.com/login",
+			"time": 147,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400 ": true,
+				"code ": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"code ": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				147
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": true,
+					"code ": false
+				}
+			]
+		},
+		{
+			"id": "27462b2e-6703-4857-884a-a99d2d0e30e5",
+			"name": "Invalid pass with below 6",
+			"url": "https://api.jubelio.com/login",
+			"time": 504,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 400 ": false,
+				"code ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"code ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				504
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": false,
+					"code ": true
+				}
+			]
+		},
+		{
+			"id": "c176f528-82cb-467e-b25d-8ea2032d4c4b",
+			"name": "Invalid pass with more than 6 characters",
+			"url": "https://api.jubelio.com/login",
+			"time": 138,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 400 ": false,
+				"code ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"code ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				138
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": false,
+					"code ": true
+				}
+			]
+		},
+		{
+			"id": "2692d007-33c2-41c5-8d2b-4848db2788ee",
+			"name": "Unauthorized",
+			"url": "https://api.jubelio.com/inventory/internal-price-list/",
+			"time": 405,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401 ": true,
+				"error ": true,
+				"message ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"message ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				405
+			],
+			"allTests": [
+				{
+					"Status code is 401 ": true,
+					"error ": true,
+					"message ": true
+				}
+			]
+		},
+		{
+			"id": "94093c6c-4fa8-4e36-abbc-11de06f35260",
+			"name": "Invalid url",
+			"url": "https://api.jubelio.com/inventory/internal-price-list/12",
+			"time": 149,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404 ": true,
+				"error ": false,
+				"message ": false
+			},
+			"testPassFailCounts": {
+				"Status code is 404 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"message ": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				149
+			],
+			"allTests": [
+				{
+					"Status code is 404 ": true,
+					"error ": false,
+					"message ": false
+				}
+			]
+		},
+		{
+			"id": "04e43698-9815-41ab-b219-23eaad9c65da",
+			"name": "Valid",
+			"url": "https://api.jubelio.com/inventory/internal-price-list/",
+			"time": 403,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 ": true,
+				"item_id ": true,
+				"item_group_id ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"item_id ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"item_group_id ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				403
+			],
+			"allTests": [
+				{
+					"Status code is 200 ": true,
+					"item_id ": true,
+					"item_group_id ": true
+				}
+			]
+		},
+		{
+			"id": "9dcad294-677c-49e3-9bb4-2f6f2e129cea",
+			"name": "Valid",
+			"url": "https://api.jubelio.com/inventory/items/",
+			"time": 193,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 ": true,
+				"status ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"status ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				193
+			],
+			"allTests": [
+				{
+					"Status code is 200 ": true,
+					"status ": true
+				}
+			]
+		},
+		{
+			"id": "ba2910db-aa34-4316-9885-c8c9c4fc2f5b",
+			"name": "Unauthorized",
+			"url": "https://api.jubelio.com/inventory/items/",
+			"time": 147,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401 ": true,
+				"error ": true,
+				"message ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"message ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				147
+			],
+			"allTests": [
+				{
+					"Status code is 401 ": true,
+					"error ": true,
+					"message ": true
+				}
+			]
+		},
+		{
+			"id": "77183f98-b5bf-45f1-9b80-ebd05c932ff0",
+			"name": "Invalid Url",
+			"url": "https://api.jubelio.com/inventory/items/12",
+			"time": 182,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404 ": true,
+				"error ": true,
+				"message ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"message ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				182
+			],
+			"allTests": [
+				{
+					"Status code is 404 ": true,
+					"error ": true,
+					"message ": true
+				}
+			]
+		},
+		{
+			"id": "b6ef4b12-cf07-4e01-a969-25e96d0ff77d",
+			"name": "negatif IDS",
+			"url": "https://api.jubelio.com/inventory/items/",
+			"time": 1780,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400 ": false,
+				"error ": false,
+				"message ": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"error ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"message ": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				1780
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": false,
+					"error ": false,
+					"message ": false
+				}
+			]
+		},
+		{
+			"id": "98a65c21-159e-470f-8122-e5f30708f0ba",
+			"name": "String IDS",
+			"url": "https://api.jubelio.com/inventory/items/",
+			"time": 187,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400 ": true,
+				"error ": true,
+				"message ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"message ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				187
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": true,
+					"error ": true,
+					"message ": true
+				}
+			]
+		},
+		{
+			"id": "8feedd1c-a2f3-46ba-910d-b920e3da7646",
+			"name": "Empty ids",
+			"url": "https://api.jubelio.com/inventory/items/",
+			"time": 241,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 400 ": false,
+				"status ": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"status ": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				241
+			],
+			"allTests": [
+				{
+					"Status code is 400 ": false,
+					"status ": false
+				}
+			]
+		},
+		{
+			"id": "8f636b40-d81c-4539-b18b-e7dee24d796c",
+			"name": "Valid (jpg)",
+			"url": "https://api.jubelio.com/inventory/upload-image",
+			"time": 201,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 200 ": false,
+				"success ": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"success ": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				201
+			],
+			"allTests": [
+				{
+					"Status code is 200 ": false,
+					"success ": false
+				}
+			]
+		},
+		{
+			"id": "1fbd39ca-3e18-4cb5-8c0e-ec0db17cd29b",
+			"name": "Valid (png)",
+			"url": "https://api.jubelio.com/inventory/upload-image",
+			"time": 185,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 200 ": false,
+				"success ": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"success ": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				185
+			],
+			"allTests": [
+				{
+					"Status code is 200 ": false,
+					"success ": false
+				}
+			]
+		},
+		{
+			"id": "19474549-18f7-4793-86cd-5ea14a19365a",
+			"name": "Valid (jpeg)",
+			"url": "https://api.jubelio.com/inventory/upload-image",
+			"time": 196,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 200 ": false,
+				"success ": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"success ": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				196
+			],
+			"allTests": [
+				{
+					"Status code is 200 ": false,
+					"success ": false
+				}
+			]
+		},
+		{
+			"id": "9097130c-1219-48aa-b31b-3a2fb3788ba3",
+			"name": "Valid (jpg) 2MB",
+			"url": "https://api.jubelio.com/inventory/upload-image",
+			"time": 247,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 200 ": false,
+				"success ": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200 ": {
+					"pass": 0,
+					"fail": 1
+				},
+				"success ": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				247
+			],
+			"allTests": [
+				{
+					"Status code is 200 ": false,
+					"success ": false
+				}
+			]
+		},
+		{
+			"id": "9ce56ebf-da67-46ae-b031-73edf4ecc44b",
+			"name": "unauthorized",
+			"url": "https://api.jubelio.com/inventory/upload-image",
+			"time": 149,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401 ": true,
+				"error ": true,
+				"message ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"message ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				149
+			],
+			"allTests": [
+				{
+					"Status code is 401 ": true,
+					"error ": true,
+					"message ": true
+				}
+			]
+		},
+		{
+			"id": "f90e1b09-dba5-44af-a9cb-fc01c91da956",
+			"name": "Invalid Url",
+			"url": "https://api.jubelio.com/inventory/upload-",
+			"time": 183,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404 ": true,
+				"error ": true,
+				"message ": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"error ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"message ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				183
+			],
+			"allTests": [
+				{
+					"Status code is 404 ": true,
+					"error ": true,
+					"message ": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 9172,
+	"collection": {
+		"requests": [
+			{
+				"id": "380b28f3-11c1-4464-bd9b-cd04d02bc34b",
+				"method": "POST"
+			},
+			{
+				"id": "0e7efaed-a517-4c27-892b-a72ed8740148",
+				"method": "POST"
+			},
+			{
+				"id": "a746c9d0-cb2b-4f68-bb47-a96ff0996239",
+				"method": "POST"
+			},
+			{
+				"id": "76d1f837-1993-4f40-974a-e43855b87fa8",
+				"method": "POST"
+			},
+			{
+				"id": "580b9fcd-73d6-43d4-a871-2eb41196351c",
+				"method": "POST"
+			},
+			{
+				"id": "fd819a11-d37b-4020-a606-277a2dc78dbc",
+				"method": "POST"
+			},
+			{
+				"id": "1699b047-1743-4470-a3d5-f7407dd02c6a",
+				"method": "POST"
+			},
+			{
+				"id": "093403d3-fd30-406b-bd84-1654ccabcb4e",
+				"method": "POST"
+			},
+			{
+				"id": "27462b2e-6703-4857-884a-a99d2d0e30e5",
+				"method": "POST"
+			},
+			{
+				"id": "c176f528-82cb-467e-b25d-8ea2032d4c4b",
+				"method": "POST"
+			},
+			{
+				"id": "2692d007-33c2-41c5-8d2b-4848db2788ee",
+				"method": "GET"
+			},
+			{
+				"id": "94093c6c-4fa8-4e36-abbc-11de06f35260",
+				"method": "GET"
+			},
+			{
+				"id": "04e43698-9815-41ab-b219-23eaad9c65da",
+				"method": "GET"
+			},
+			{
+				"id": "9dcad294-677c-49e3-9bb4-2f6f2e129cea",
+				"method": "DELETE"
+			},
+			{
+				"id": "ba2910db-aa34-4316-9885-c8c9c4fc2f5b",
+				"method": "DELETE"
+			},
+			{
+				"id": "77183f98-b5bf-45f1-9b80-ebd05c932ff0",
+				"method": "DELETE"
+			},
+			{
+				"id": "b6ef4b12-cf07-4e01-a969-25e96d0ff77d",
+				"method": "DELETE"
+			},
+			{
+				"id": "98a65c21-159e-470f-8122-e5f30708f0ba",
+				"method": "DELETE"
+			},
+			{
+				"id": "8feedd1c-a2f3-46ba-910d-b920e3da7646",
+				"method": "DELETE"
+			},
+			{
+				"id": "8f636b40-d81c-4539-b18b-e7dee24d796c",
+				"method": "POST"
+			},
+			{
+				"id": "1fbd39ca-3e18-4cb5-8c0e-ec0db17cd29b",
+				"method": "POST"
+			},
+			{
+				"id": "19474549-18f7-4793-86cd-5ea14a19365a",
+				"method": "POST"
+			},
+			{
+				"id": "9097130c-1219-48aa-b31b-3a2fb3788ba3",
+				"method": "POST"
+			},
+			{
+				"id": "9ce56ebf-da67-46ae-b031-73edf4ecc44b",
+				"method": "POST"
+			},
+			{
+				"id": "f90e1b09-dba5-44af-a9cb-fc01c91da956",
+				"method": "POST"
+			}
+		]
+	}
+}
